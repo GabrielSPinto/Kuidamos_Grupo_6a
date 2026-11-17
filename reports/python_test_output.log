@@ -1,0 +1,16 @@
+PYTHONPATH=verification python3 -m unittest discover -s verification -p 'test_*.py' -v
+test_all_vector_lines_match_golden_model (test_golden_model.FixtureTests.test_all_vector_lines_match_golden_model) ... ok
+test_against_separate_scalar_loop (test_golden_model.GoldenModelTests.test_against_separate_scalar_loop) ... ok
+test_encoding_fields (test_golden_model.GoldenModelTests.test_encoding_fields) ... ok
+test_reject_wrong_width (test_golden_model.GoldenModelTests.test_reject_wrong_width) ... ok
+test_row_major_mapping (test_golden_model.GoldenModelTests.test_row_major_mapping) ... ok
+test_signed_extremes (test_golden_model.GoldenModelTests.test_signed_extremes) ... ok
+test_zero_identity (test_golden_model.GoldenModelTests.test_zero_identity) ... ok
+test_generates_are_parallel (test_rtl_static.RtlStaticChecks.test_generates_are_parallel) ... ok
+test_interface_and_clock (test_rtl_static.RtlStaticChecks.test_interface_and_clock) ... ok
+test_no_forbidden_behavioral_constructs (test_rtl_static.RtlStaticChecks.test_no_forbidden_behavioral_constructs) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.034s
+
+OK

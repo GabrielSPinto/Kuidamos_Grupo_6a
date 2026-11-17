@@ -1,0 +1,31 @@
+name: Grupo 6A - RTL validation
+on:
+  push:
+  pull_request:
+jobs:
+  rtl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install open-source HDL tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y iverilog verilator
+          python3 -m pip install -r requirements.txt
+      - name: Test Golden Model and RTL static contract
+        run: make test-model
+      - name: Simulate real RTL and compare 1044 golden vectors
+        run: make test-rtl
+      - name: Lint synthesizable DUT
+        run: make lint
+      - name: Archive evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rtl-regression-logs
+          path: |
+            build/iverilog_result.log
+            vectors/matmul_vectors.txt

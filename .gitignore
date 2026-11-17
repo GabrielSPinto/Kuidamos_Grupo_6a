@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+build/
+*.vcd
+*.vpd
+*.fsdb
+ucli.key
+csrc/
+simv*
+.DS_Store

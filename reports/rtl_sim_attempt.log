@@ -1,0 +1,3 @@
+Command: bash scripts/run_iverilog.sh
+Exit status: 127
+ERROR: iverilog not found. Install Icarus Verilog or use GitHub Actions.
